@@ -1,0 +1,53 @@
+.main {
+	width: 100%;
+	height: 40vh;
+	background-color: $three;
+
+	nav {
+		width: 100%;
+		height: auto;
+		background-color: $three;
+		display: flex;
+		position: fixed;
+		align-items: center;
+		justify-content: space-around;
+		top: 0;
+		img {
+			width: 4em;
+			height: 3em;
+		}
+
+		ul {
+			display: inline-flex;
+			float: right;
+			text-align: center;
+			color: $one;
+
+			a:hover {
+				color: $four;
+			}
+			li {
+				padding: 0 2em 0 2em;
+			}
+		}
+	}
+
+	.sign-up {
+		@include bt-trasnparent;
+	}
+	.info-main {
+		margin-top: 3em;
+		width: 100%;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		img {
+			width: 300px;
+			height: 300px;
+		}
+	}
+}
+
+.hola {
+	height: 70vh;
+}
