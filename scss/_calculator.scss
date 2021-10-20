@@ -1,0 +1,43 @@
+.calculator {
+	text-align: center;
+	color: $one;
+	width: 100%;
+	height: auto;
+	margin-bottom: 2em;
+	margin-top: -1em;
+	background-color: $three;
+	form {
+		display: inline-flex;
+
+		flex-direction: column;
+		margin: auto;
+		input {
+			margin: 1em;
+			padding: 1em;
+			background-color: $one;
+			padding: 8px;
+			border: solid $one;
+			border-radius: 15px;
+		}
+		button {
+			color: $one;
+			font-family: $my-font;
+			font-size: 16px;
+			@include bt-trasnparent;
+		}
+	}
+
+	table {
+		color: $one;
+		margin: auto;
+		td {
+			padding: 1em;
+			button {
+				color: $one;
+				font-family: $my-font;
+				font-size: 16px;
+				@include bt-trasnparent;
+			}
+		}
+	}
+}

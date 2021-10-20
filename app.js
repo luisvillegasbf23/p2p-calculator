@@ -1,70 +1,88 @@
+/// ENTIDADES ///
 class Cripto {
-	constructor({ cantidad, precio, nombre }) {
-		(this.nombre = nombre),
-			(this.precio = precio),
-			(this.cantidad = cantidad),
-			(this.cantidadEnDolares = precio * cantidad);
+	constructor({ nombre, precio, cantidad }) {
+		this.nombre = nombre;
+		this.precio = precio;
+		this.cantidad = cantidad;
+		this.totalPesos = precio * cantidad;
 	}
 }
 
-const listaDeCriptos = [];
+/// VARIABLES ///
+let listaCriptos = [];
 
-const archivarCripto = () => {
-	const nombre = prompt("Ingrese el nombre del token");
-	const precio = Number(prompt("Ingrese el precio"));
-	const cantidad = Number(prompt("Ingrese cantidad"));
+/// FUNCIONES ///
 
+// Crear Cripto
+const crearCripto = () => {
 	const cripto = new Cripto({
-		nombre: nombre,
-		precio: precio,
-		cantidad: cantidad,
+		nombre: document.getElementById("nombre").value,
+		precio: document.getElementById("precio").value,
+		cantidad: document.getElementById("cantidad").value,
 	});
 
-	listaDeCriptos.push(cripto);
-	console.log(listaDeCriptos);
-	console.log(`su total en dolares es, ${totalDolares()}`);
+	let lista;
+	if (localStorage.getItem("listaCriptos") != null) {
+		lista = JSON.parse(localStorage.getItem("listaCriptos"));
+		lista.push(cripto);
+		localStorage.setItem("listaCriptos", JSON.stringify(lista));
+	}
+	listaCriptos.push(cripto);
+
+	return cripto;
 };
 
-const totalDolares = () => {
-	if (listaDeCriptos.length > 1) {
-		return listaDeCriptos.reduce((valorAnterior, valorActual) => {
-			console.log(valorAnterior, valorActual);
-			return valorAnterior.cantidadEnDolares + valorActual.cantidadEnDolares;
-		});
+// Guardar datos
+const guardarEnBaseDeDatos = () => {
+	crearCripto();
+
+	if (verificarStorage() != undefined) {
+		localStorage.setItem("listaCriptos", JSON.stringify(verificarStorage()));
 	} else {
-		return listaDeCriptos[0].cantidadEnDolares;
+		localStorage.setItem("listaCriptos", JSON.stringify(listaCriptos));
 	}
 };
 
-//// SIGN UP /////
-const nombre = document.getElementById("name");
-const email = document.getElementById("email");
-const pass = document.getElementById("password");
-const form = document.getElementById("form");
-const parrafo = document.getElementById("warnings");
+// Verificar Storage
+const verificarStorage = () => {
+	let dato = [];
+	if (localStorage.getItem("listaCriptos") != null) {
+		dato = JSON.parse(localStorage.getItem("listaCriptos"));
+		return dato;
+	}
+};
 
-form.addEventListener("submit", (e) => {
-	e.preventDefault();
-	let warnings = "";
-	let entrar = false;
-	let regexEmail = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,4})+$/;
-	parrafo.innerHTML = "";
-	if (nombre.value.length < 6) {
-		warnings += ` El nombre es muy corto <br>`;
-		entrar = true;
-	}
-	if (!regexEmail.test(email.value)) {
-		warnings += `El email no es valido <br>`;
-		entrar = true;
-	}
-	if (pass.value.length < 8) {
-		warnings += `La contraseña es muy corta <br>`;
-		entrar = true;
-	}
+// Imprimir datos
 
-	if (entrar) {
-		parrafo.innerHTML = warnings;
-	} else {
-		parrafo.innerHTML = "Enviado";
-	}
+const imprimirDatos = () => {
+	verificarStorage().forEach((obj) => {
+		document.getElementById("table").innerHTML += `
+        <tr>
+	
+					<td>${obj.nombre}</td>
+					<td>${obj.precio}</td>
+					<td>${obj.cantidad}</td>
+					<td>${obj.totalPesos}</td>
+					<td><button onclick=elimiarDeLaLista(${obj.totalPesos})>X</button></td>
+		</tr>
+		
+        `;
+	});
+};
+
+const elimiarDeLaLista = (totalPesos) => {
+	let listaVieja = JSON.parse(localStorage.getItem("listaCriptos"));
+	let listaNueva = listaVieja.filter((e) => e.totalPesos != totalPesos);
+
+	localStorage.setItem("listaCriptos", JSON.stringify(listaNueva));
+	location.reload();
+};
+/// EVENTOS //
+
+document.getElementById("btn").addEventListener("click", () => {
+	guardarEnBaseDeDatos();
 });
+
+if (localStorage.getItem("listaCriptos") != null) {
+	imprimirDatos();
+}
