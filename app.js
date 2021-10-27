@@ -79,7 +79,7 @@ const elimiarDeLaLista = (totalPesos) => {
 };
 /// EVENTOS //
 
-document.getElementById("btn").addEventListener("click", () => {
+$("form").submit(() => {
 	guardarEnBaseDeDatos();
 });
 
