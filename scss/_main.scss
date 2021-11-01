@@ -28,6 +28,12 @@
 			}
 			li {
 				padding: 0 2em 0 2em;
+
+				i {
+					&:hover {
+						font-weight: 900;
+					}
+				}
 			}
 		}
 	}

@@ -23,6 +23,8 @@
         color: #239089; }
       .main nav ul li {
         padding: 0 2em 0 2em; }
+        .main nav ul li i:hover {
+          font-weight: 900; }
   .main .sign-up {
     background-color: transparent;
     padding: 8px;
@@ -104,6 +106,10 @@ button {
   margin-bottom: 2em;
   margin-top: -1em;
   background-color: #00cba9; }
+  .calculator #show-app {
+    cursor: pointer; }
+  .calculator #beta-app {
+    display: none; }
   .calculator form {
     display: inline-flex;
     flex-direction: column;

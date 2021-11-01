@@ -86,3 +86,7 @@ $("form").submit(() => {
 if (localStorage.getItem("listaCriptos") != null) {
 	imprimirDatos();
 }
+
+$("#show-app").on("click", () => {
+	$("#beta-app").show();
+});
