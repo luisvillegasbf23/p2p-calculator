@@ -106,6 +106,8 @@ button {
   margin-bottom: 2em;
   margin-top: -1em;
   background-color: #00cba9; }
+  .calculator .dolar {
+    cursor: pointer; }
   .calculator #show-app {
     cursor: pointer; }
   .calculator #beta-app {

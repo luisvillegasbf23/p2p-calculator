@@ -90,3 +90,18 @@ if (localStorage.getItem("listaCriptos") != null) {
 $("#show-app").on("click", () => {
 	$("#beta-app").show();
 });
+
+const url = `https://api.coincap.io/v2/assets`;
+
+setInterval(() => {
+	$.get(url, (respuesta, estado) => {
+		document.getElementById("btc").innerHTML = "";
+
+		if (estado == "success") {
+			console.log(respuesta.data[0]);
+
+			document.getElementById("btc").innerHTML += `
+				<p> ${respuesta.data[0].id} price : ${respuesta.data[0].priceUsd} </p>`;
+		}
+	});
+}, 1000);
