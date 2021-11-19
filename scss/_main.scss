@@ -13,6 +13,7 @@
 		justify-content: space-around;
 		top: 0;
 		img {
+			padding-left: 1em;
 			width: 4em;
 			height: 3em;
 		}
@@ -27,7 +28,7 @@
 				color: $four;
 			}
 			li {
-				padding: 0 2em 0 2em;
+				padding: 1em 2em 0 2em;
 
 				i {
 					&:hover {
@@ -74,6 +75,10 @@
 	text-align: center;
 	h1 {
 		color: $three;
+	}
+
+	@media (max-width: 505px) {
+		height: 50vh;
 	}
 }
 

@@ -1,9 +1,13 @@
+// FRAMEWORK //
+@import "custom";
+
 @import "mixin";
 @import "colors";
 @import "main";
 @import "typography";
 @import "calculator";
 @import "see-sign-up";
+@import "footer";
 
 * {
 	margin: 0%;

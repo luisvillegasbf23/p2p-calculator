@@ -1,0 +1,58 @@
+footer {
+	display: grid;
+	width: 100%;
+	height: 35vh;
+	background-color: $three;
+	display: flex;
+	align-items: center;
+
+	.social {
+		text-align: center;
+
+		a {
+			font-size: 2em;
+			padding-right: 0.5em;
+		}
+
+		@media (max-width: 800px) {
+			margin-top: 1em;
+		}
+	}
+
+	.copy {
+		color: $one;
+		text-align: center;
+		margin-top: 4em;
+		p {
+			font-size: 0.75em;
+		}
+		@media (max-width: 800px) {
+			display: none;
+		}
+	}
+
+	.info {
+		text-align: start;
+		color: $one;
+		p {
+			font-size: 0.75em;
+		}
+		@media (max-width: 800px) {
+			margin-top: 1em;
+			text-align: center;
+		}
+	}
+
+	.copy2 {
+		display: none;
+		color: $one;
+		text-align: center;
+		margin-top: 1em;
+		p {
+			font-size: 0.75em;
+		}
+		@media (max-width: 800px) {
+			display: block;
+		}
+	}
+}
