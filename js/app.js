@@ -57,6 +57,7 @@ const verificarStorage = () => {
 const imprimirDatos = () => {
 	verificarStorage().forEach((obj) => {
 		document.getElementById("table").innerHTML += `
+		<tbody> 
         <tr>
 	
 					<td>${obj.nombre}</td>
@@ -65,7 +66,7 @@ const imprimirDatos = () => {
 					<td>${obj.totalPesos}</td>
 					<td><button onclick=elimiarDeLaLista(${obj.totalPesos})>X</button></td>
 		</tr>
-		
+		</tbody>
         `;
 	});
 };
@@ -105,3 +106,30 @@ setInterval(() => {
 		}
 	});
 }, 1000);
+
+// Help message
+let help = $(`#help`);
+let iconMessage = $(`#icon-help`);
+
+$(document).ready(() => {
+	help.hide(); // ocultar elemento
+
+	iconMessage.click(function () {
+		help.show(); // mostrar mensaje
+	});
+});
+
+// Sign out
+let signOut = $(`#sign-out`);
+
+$(document).ready(() => {
+	signOut.click(function () {
+		alert(`¿Desea cerrar sesion?`);
+	});
+});
+
+// Datatables
+
+$(document).ready(function () {
+	$("#table").DataTable();
+});

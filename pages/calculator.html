@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+		<!-- GOOGLE FONTS -->
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600;900&display=swap"
+			rel="stylesheet"
+		/>
+		<!-- Boxiocns CDN Link -->
+		<link href="https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css" rel="stylesheet" />
+		<link rel="icon" type="icon/png" href="../img/logo.svg" />
+		<link rel="stylesheet" href="../css/styles.css" />
+		<title>Document</title>
+	</head>
+	<body>
+		<div class="sidebar close">
+			<ul class="nav-links">
+				<li>
+					<a href="home.html">
+						<i class="bx bxs-home"></i>
+						<span class="link_name">Home</span>
+					</a>
+					<ul class="sub-menu blank">
+						<li><a class="link_name" href="#">Home</a></li>
+					</ul>
+				</li>
+				<li>
+					<div class="iocn-link">
+						<a href="#">
+							<i class="bx bxs-wallet"></i>
+							<span class="link_name">Wallet</span>
+						</a>
+						<i class="bx bxs-chevron-down arrow"></i>
+					</div>
+					<ul class="sub-menu">
+						<li><a class="link_name" href="#">Wallet</a></li>
+						<li><a href="#">Comming soon</a></li>
+					</ul>
+				</li>
+				<li>
+					<div class="iocn-link">
+						<a href="calculator.html" class="here">
+							<i class="bx bxs-calculator"></i>
+							<span class="link_name">Calculator</span>
+						</a>
+						<i class="bx bxs-chevron-down arrow"></i>
+					</div>
+					<ul class="sub-menu">
+						<li><a class="link_name" href="calculator.html">Calculator</a></li>
+					</ul>
+				</li>
+				
+
+				<li>
+					<div class="profile-details" id="sign-out">
+						<a href="../index.html">
+							<i class="bx bx-log-out"></i>
+						</a>
+					</div>
+				</li>
+			</ul>
+		</div>
+		<div class="welcome-calculator">
+			<div class="calculator" id="calcu">
+				<div class="dolar" id="dolar"></div>
+
+				<div class="btc" id="btc"></div>
+
+				<h1>P2P: BETA APP</h1>
+				
+
+				
+					<form action="">
+						<input type="text" placeholder="name" autocomplete="off" id="nombre" />
+						<input type="number" placeholder="price" autocomplete="off" id="precio" />
+						<input type="number" placeholder="amount" autocomplete="off" id="cantidad" />
+						<button id="btn">save</button>
+					</form>
+                    <div class="tablee">
+                        <table id="table" class="table">
+                            
+                                
+                                <tr>
+                                    <td>name</td>
+                                    <td>price</td>
+                                    <td>amount</td>
+                                    <td>total UYU </td>
+                                </tr>
+    
+                        
+                        </table>
+
+                    </div>
+					
+				
+			</div>
+
+            <div class="message">
+                <div class="help" id="help">
+                    <p> Hi, need help? </br><a href="contacto.html">contact us </a>  </p>
+                </div>
+
+                <div class="icon-help">
+                     <i class='bx bxs-help-circle' id="icon-help"></i>
+                </div>
+                
+            
+        </div>
+		</div>
+
+		<script src="https://kit.fontawesome.com/fa8bfe5c3c.js" crossorigin="anonymous"></script>
+		<script src="../js/libreria.min.js"></script>
+		<script src="../js/app.js"></script>
+	</body>
+</html>

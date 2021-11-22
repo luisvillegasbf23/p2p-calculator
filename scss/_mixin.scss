@@ -11,3 +11,10 @@
 		transition: 0.3s;
 	}
 }
+
+// CENTER ALIGN //
+@mixin center-align {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
